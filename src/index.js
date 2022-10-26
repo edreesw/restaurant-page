@@ -1,9 +1,9 @@
-import loadAbout from "./modules/about.js"; 
-import loadMenu from "./modules/menu.js"; 
-import loadContact from "./modules/contact.js"; 
-import initialLoad from "./modules/initialLoad.js"; 
+import generateAboutContent from "./modules/about.js"; 
+import generateMenuContent from "./modules/menu.js"; 
+import generateContactContent from "./modules/contact.js"; 
 import "./styles/style.css"; 
-import { ABOUT_TAB, MENU_TAB, CONTACT_TAB } from "./modules/header.js";
+import generateFooter from "./modules/footer.js"; 
+import { ABOUT_TAB, MENU_TAB, CONTACT_TAB, default as generateHeader } from "./modules/header.js";
 
 
 const mainElement = document.getElementById("main-content"); 
@@ -13,6 +13,18 @@ function clearMainContent() {
 	while(mainElement.firstChild) {
 		mainElement.firstChild.remove()
 	}
+}
+
+function initialLoad() {
+    //load header, footer, and about page
+    document.body.insertBefore(generateHeader(), mainElement); 
+
+    document.body.appendChild(generateFooter()); 
+
+    mainElement.appendChild(generateAboutContent()); 
+
+    const aboutTab = document.getElementById("about-tab"); 
+    aboutTab.classList.add("selected");
 }
 
 function loadTabContent(e) {
@@ -29,13 +41,13 @@ function loadTabContent(e) {
 
     switch(tabId) {
         case ABOUT_TAB : 
-            loadAbout(); 
+            mainElement.appendChild(generateAboutContent()); 
             break; 
         case MENU_TAB : 
-            loadMenu(); 
+            mainElement.appendChild(generateMenuContent()); 
             break; 
         case CONTACT_TAB : 
-            loadContact(); 
+            mainElement.appendChild(generateContactContent()); 
             break; 
     }    
 }

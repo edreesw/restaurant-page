@@ -1,6 +1,6 @@
 import pizzaImg from "../images/pizza-stock.jpeg"; 
 
-export default function loadAbout() {
+export default function generateAboutContent() {
     /*
     <main class="restaurant-main">
     <img src="" alt="" class="restaurant-main-image">
@@ -8,8 +8,6 @@ export default function loadAbout() {
     <p class="restaurant-main-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo itaque doloribus corrupti delectus ducimus, alias dicta voluptates culpa inventore nobis!</p>
     </main>
     */
-    const mainElement = document.getElementById("main-content"); 
-
     const aboutContainer = document.createElement("div"); 
     aboutContainer.classList.add("about-container"); 
 
@@ -29,6 +27,5 @@ export default function loadAbout() {
     aboutContainer.appendChild(aboutImage); 
     aboutContainer.appendChild(aboutText); 
 
-    mainElement.appendChild(aboutContainer); 
-
+    return aboutContainer; 
 }

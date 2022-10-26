@@ -14,9 +14,7 @@ function addContactRow(table, contactTypeText, contactValueText) {
 	table.appendChild(tr1); 
 }
 
-export default function loadContact() {
-    const mainElement = document.getElementById("main-content"); 
-
+export default function generateContactContent() {
     const image = new Image(); 
     image.src = chefImg; 
 
@@ -37,5 +35,5 @@ export default function loadContact() {
     contactContainer.appendChild(table); 
     contactContainer.appendChild(image); 
 
-	mainElement.appendChild(contactContainer); 
+	return contactContainer; 
 }

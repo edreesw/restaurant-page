@@ -25,9 +25,7 @@ function createMenuItem(imageSrc, text, price) {
     return menuItem; 
 }
 
-export default function loadMenu() {
-    const mainElement = document.getElementById("main-content"); 
-
+export default function generateMenuContent() {
     const menuContainer = document.createElement("div"); 
     menuContainer.classList.add("menu-container"); 
 
@@ -39,5 +37,5 @@ export default function loadMenu() {
         menuContainer.appendChild(menuItem); 
     })
 
-    mainElement.appendChild(menuContainer); 
+    return menuContainer;  
 }

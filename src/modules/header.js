@@ -1,7 +1,6 @@
 export const [ABOUT_TAB, MENU_TAB, CONTACT_TAB] = ["about-tab", "menu-tab", "contact-tab"]; 
 
-export default function header() {
-    console.log("In Header Func");
+export default function generateHeader() {
     /** 
      <header>
         <h1 class="restaurant-header-text">Pizza Pasta Restaurant</h1>
@@ -12,7 +11,8 @@ export default function header() {
         </ul></nav>
     </header>
     **/
-    const header = document.getElementById("header"); 
+    const header = document.createElement("header"); 
+    header.id = "header"; 
 
     //headers: 
     let h1 = document.createElement("h1"); 
@@ -47,6 +47,8 @@ export default function header() {
     contactTab.classList.add("tab"); 
     tabList.appendChild(contactTab);
     header.appendChild(nav); 
+
+    return header; 
 
 }
 
