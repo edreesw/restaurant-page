@@ -1,0 +1,151 @@
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+
+/* header */ 
+.selected {
+    background-color: grey;
+}
+
+.header-nav {
+    
+}
+
+.header-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+
+    font: 16px; 
+    font-weight: bold;
+}
+
+.header-nav li {
+    padding: 20px; 
+}
+
+header h1 {
+    text-align: center;
+    padding: 40px;
+}
+
+.tab:hover {
+    background-color: darkgray;
+}
+
+
+
+/* footer */
+footer {
+    text-align: center;
+    font-size: 16px;
+    padding: 16px;
+}
+
+
+
+/* main content */
+main#main-content {
+    flex: 1; 
+    padding: 16px; 
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.about-container {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+}
+
+.about-header {
+    padding: 10px; 
+}
+
+.about-image {
+    width: max(340px, 50%);
+    height: auto;
+    border-radius: 8px;
+}
+
+.about-text {
+    font-size: 20px;
+}
+
+
+
+.menu-container {
+    display: grid; 
+    gap: 50px; 
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+
+.menu-item {
+    text-align: center;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; 
+    padding: 16px; 
+  }
+
+  .menu-item-image {
+    width: max(200px, 100%);
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .menu-item-text {
+    font-size: 20px;
+  }
+
+  .menu-item-price {
+    font-size: 24px;
+  }
+
+
+
+  .contact-container {
+    display: flex; 
+    flex-direction: column;
+    gap: 30px; 
+    align-items: center;
+  }
+
+  .contact-container img {
+    border-radius: 16px;
+    width: max(300px, 25%);
+    height: auto;
+  }
+
+  .contact-table {
+    font-size: 20px;
+    text-align: center;
+    width: 50%;
+  }
+
+  @media (max-width: 800px) {
+    .menu-container {
+        grid-template-columns: 1fr; 
+    }
+
+    main#main-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+  }
